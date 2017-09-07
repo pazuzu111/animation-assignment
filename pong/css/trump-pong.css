@@ -1,0 +1,192 @@
+*{
+  margin: 0;
+}
+
+body{
+  background: url(../images/flag2.jpg);
+  background-size: cover;
+}
+
+      /* custom font called cookie */
+@font-face {
+    font-family: 'cookie';
+    src: url('../cookie.otf'); 
+}
+
+      /* AMERICA */
+h1{
+  font-size: 150px;
+  text-align: center;
+  color: white;
+  font-family: 'cookie';
+  margin-bottom: -89px;
+
+}
+
+#container{
+  width: 960px;
+  margin: 0 auto;
+}
+
+      /* pong table */
+#table{
+  position: absolute;
+  width: 600px;
+  border-bottom: 9px groove navy;
+  margin: 380px 200px;
+}
+
+        /* table net */
+#table:before{
+  content: "";
+  width: 10px;
+  height: 60px;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: absolute;
+  margin-left: 300px;
+  margin-top: -50px;
+}
+
+      /* table legs */
+#table:after{
+  position: absolute;
+  content:"";
+  width: 540px;
+  height: 250px;
+  border-left: 10px dotted red;
+  border-right: 10px dotted red;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+      /* ground */
+#platform1{
+  position: absolute;
+  bottom: -78px;
+  height: 200px;
+  width: 100%;
+  background-color: black;
+}
+
+      /* ping pong ball */
+#ball{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-top: 80px;
+  background-color: white;
+  -webkit-animation: bounce 2s linear infinite;
+}
+
+      /*ping pong effect*/
+@-webkit-keyframes bounce{
+
+  /* set initial position */
+  0%, 100%{
+    margin-left: 100px;    
+    margin-top: 80px;
+  }
+
+  /*  at 25% of animation */  
+  25%{
+    margin-left: 650px;
+    margin-top: 320px;
+  }
+
+  /*  at 30% of animation */  
+  30%{
+    margin-left: 750px;
+    margin-top: 370px;
+  }
+
+  /*  at 40% of animation */
+  40%{
+    margin-left: 900px;
+    margin-top: 208px;
+  }
+
+  /*  at 50% of animation */
+  50%{
+    margin-left: 650px;
+    margin-top: 370px;
+  }
+
+  /*  at 60% of animation */
+  60%{
+    margin-left: 500px;
+    margin-top: 280px;
+  }
+
+  /*  at 70% of animation */
+  70%{
+    margin-left: 390px;
+    margin-top: 370px;
+  }
+}
+
+  /* shared style by hillary and trump */
+.paddle{
+  position: absolute;
+  width: 200px; 
+  height: 405px;
+}
+
+        /* trump */
+#left{
+  margin-top: 70px;
+  background: url(../images/trump1.png);
+  background-size: cover;
+  -webkit-transform: rotateY(0deg);
+  -webkit-animation: trump 2s linear infinite;
+}
+
+        /* hillary */
+#right{
+  margin-left: 810px;
+  margin-top: 80px;
+  background: url(../images/clinton1.png);
+  background-size: cover;  
+  background-position: center;
+  -webkit-animation: clinton 2s linear infinite;
+}
+
+    /* make trump hit ball */
+@-webkit-keyframes trump{
+
+  /* initialize positon */
+  0%, 100% {
+    -webkit-transform: rotateY(0deg);
+  }
+
+  /* at 3% rotate on the y-axis */
+  3%{
+    -webkit-transform: rotateY(-90deg);
+  }
+}
+
+      /* make clinton hit ball */
+@-webkit-keyframes clinton{
+
+  /* initialize positon */
+  0%, 100%{
+    -webkit-transform: rotateY(0deg);
+  }
+
+  /* at 25% delay rotation letting trump smack ball first */
+  25%{
+    -webkit-transform: rotateY(0deg);
+  }
+  
+  /* at 40% execute rotation on the y-axis */
+  40%{
+    -webkit-transform: rotateY(-90deg);
+  }
+
+  /* at 70% speed up reverting to initial postition */
+  70%{
+    -webkit-transform: rotateY(0deg);
+  }
+}
